@@ -1,6 +1,9 @@
 const express = require("express");
+const mongoose = require("mongoose"); // to create a new database 
 const articleRouter = require("./routes/articles");
 const app = express();
+
+mongoose.connect('mongodb://localhost/blog',{ useNewUrlParser: true, useUnifiedTopology: true}); //connect our database
 
 app.set("view engine", "ejs"); //converit ejs to html
 
